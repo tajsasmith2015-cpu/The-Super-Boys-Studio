@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>The Super Boys Studio | Games, Apps & Velorax</title>
+    <title>The Super Boys Studio | Games, Technology & Engineering</title>
 
-    <meta name="description" content="Discover games and projects created by The Super Boys Studio, including MudHaul, StormGuard, and Velorax - The Art of Speed.">
+    <meta name="description" content="The Super Boys Studio (TSB) - Independent creative technology and game development studio focusing on games, web, motors, robotics, and aerospace.">
     <meta name="robots" content="index, follow">
     <meta name="author" content="The Super Boys Studio">
     <meta name="theme-color" content="#050510">
@@ -119,14 +119,15 @@
 
         .small-title {
             color: #00d9ff;
-            font-size: 18px;
-            letter-spacing: 4px;
+            font-size: 16px;
+            letter-spacing: 3px;
             margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 8vw, 90px);
-            line-height: 1;
+            font-size: clamp(40px, 7vw, 80px);
+            line-height: 1.1;
             margin-bottom: 25px;
             text-shadow: 0 0 20px rgba(0,217,255,0.35);
         }
@@ -136,8 +137,8 @@
         }
 
         .hero p {
-            max-width: 700px;
-            font-size: 20px;
+            max-width: 750px;
+            font-size: 19px;
             line-height: 1.6;
             color: #c8c8d0;
             margin-bottom: 35px;
@@ -201,28 +202,33 @@
             color: #9999a8;
             font-size: 17px;
             line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        /* GAMES */
+        /* GAMES & DIVISIONS */
 
-        .games-container {
-            max-width: 1100px;
+        .games-container, .divisions-container {
+            max-width: 1200px;
             margin: auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .game-card {
+        .game-card, .division-card {
             background: linear-gradient(145deg, #121222, #0c0c18);
             border: 1px solid #25253a;
             border-radius: 18px;
-            padding: 20px;
+            padding: 25px;
             transition: 0.35s;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .game-card:hover {
+        .game-card:hover, .division-card:hover {
             transform: translateY(-10px);
             border-color: #00d9ff;
             box-shadow:
@@ -236,20 +242,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 80px;
+            font-size: 70px;
             margin-bottom: 20px;
             background: radial-gradient(circle, #1d3150, #11111f);
         }
 
-        .game-card h3 {
-            font-size: 25px;
-            margin-bottom: 10px;
+        .game-card h3, .division-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #fff;
         }
 
-        .game-card p {
+        .game-card h3 span, .division-card h3 span {
+            color: #00d9ff;
+        }
+
+        .game-card p, .division-card p {
             color: #aaaab5;
             line-height: 1.6;
             margin-bottom: 18px;
+            font-size: 15px;
         }
 
         .status {
@@ -261,6 +273,8 @@
             font-size: 13px;
             font-weight: bold;
             border: 1px solid rgba(0,217,255,0.25);
+            text-align: center;
+            width: fit-content;
         }
 
         .game-button {
@@ -393,22 +407,89 @@
             text-align: center;
         }
 
-        /* ABOUT */
+        /* ABOUT & SECTIONS EXTENDED */
 
         .about {
             background: #080811;
-            text-align: center;
         }
 
-        .about-content {
-            max-width: 750px;
+        .about-grid {
+            max-width: 1100px;
             margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
-        .about-content p {
+        .about-box {
+            background: linear-gradient(145deg, #121222, #0c0c18);
+            border: 1px solid #25253a;
+            border-radius: 20px;
+            padding: 35px 30px;
+        }
+
+        .about-box h3 {
+            color: #00d9ff;
+            font-size: 24px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0,217,255,0.2);
+            padding-bottom: 10px;
+        }
+
+        .about-box p {
             color: #b5b5c0;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-box ul {
+            list-style: none;
+            color: #dedee8;
+            line-height: 2;
+        }
+
+        .about-box ul li strong {
+            color: #00d9ff;
+        }
+
+        /* VALUES & VISION EXTRA SECTION */
+
+        .vision-mission-section {
+            background: #050510;
+            padding: 80px 50px;
+        }
+
+        .vm-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .vm-card {
+            background: linear-gradient(145deg, #0e0e1a, #080811);
+            border: 1px solid #25253a;
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .vm-card h3 {
+            color: #00d9ff;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .vm-card p, .vm-card li {
+            color: #aaaab5;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .vm-card ul {
+            padding-left: 20px;
+            margin-top: 10px;
         }
 
         /* PLAY */
@@ -416,7 +497,8 @@
         .play-section {
             text-align: center;
             background:
-                radial-gradient(circle at center, rgba(0,217,255,0.08), transparent 55%);
+                radial-gradient(circle at center, rgba(0,217,255,0.08), transparent 55%),
+                #080811;
         }
 
         .play-box {
@@ -442,7 +524,7 @@
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px 30px;
             background: #05050c;
             border-top: 1px solid #1d1d2b;
             color: #777783;
@@ -480,19 +562,19 @@
             }
 
             .hero h1 {
-                font-size: 48px;
+                font-size: 38px;
             }
 
             .hero p {
-                font-size: 17px;
+                font-size: 16px;
             }
 
             .section-title h2 {
                 font-size: 32px;
             }
 
-            .showcase-card {
-                padding: 35px 20px;
+            .showcase-card, .about-box {
+                padding: 30px 20px;
             }
 
             .showcase-card h3 {
@@ -531,10 +613,10 @@
 
         <nav>
             <a href="#home">Home</a>
-            <a href="#games">Games</a>
+            <a href="#about">About</a>
+            <a href="#divisions">Divisions</a>
             <a href="#projects">Projects</a>
             <a href="#play">Play</a>
-            <a href="#about">About</a>
         </nav>
     </header>
 
@@ -543,7 +625,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="small-title">
-                INDEPENDENT GAME STUDIO
+                BUILDING IDEAS. CREATING EXPERIENCES. ENGINEERING THE FUTURE.
             </div>
 
             <h1>
@@ -552,150 +634,243 @@
             </h1>
 
             <p>
-                We create games, explore new ideas,
-                and build worlds for players to discover.
+                We are an independent creative technology and game development studio focused on building innovative digital experiences, interactive entertainment, and future-oriented technology projects.
             </p>
 
             <div class="hero-buttons">
-                <a href="#games" class="btn primary-btn">
-                    🎮 Explore Games
+                <a href="#divisions" class="btn primary-btn">
+                    🚀 Explore Divisions
                 </a>
 
                 <a href="#projects" class="btn secondary-btn">
-                    🏎️ Velorax Project
+                    🏎️ View Projects
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- GAMES -->
+    <!-- ABOUT US & IDENTITY -->
 
-    <section id="games">
+    <section id="about" class="about">
         <div class="section-title">
-            <h2>Our Games 🎮</h2>
-            <p>
-                Games currently being developed by The Super Boys Studio.
-            </p>
+            <h2>About The Super Boys Studio 👥</h2>
+            <p>Transforming creative ideas into meaningful products through technology, engineering, creativity, and continuous learning.</p>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-box">
+                <h3>About Us</h3>
+                <p>
+                    The Super Boys Studio (TSB) is built on the belief that great creations begin with ambitious ideas, dedication, and the courage to build something new.
+                </p>
+                <p>
+                    We aim to establish a studio that goes beyond traditional game development by exploring multiple areas of technology and engineering.
+                </p>
+            </div>
+
+            <div class="about-box">
+                <h3>Our Identity</h3>
+                <p>
+                    TSB represents creativity, innovation, teamwork, and technological development. Our work focuses on combining modern design, technical knowledge, and practical innovation.
+                </p>
+                <p>
+                    <em>"Creativity. Technology. Engineering. Innovation."</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR MAIN DIVISIONS (7 DIVISIONS) -->
+
+    <section id="divisions" class="showcase-section">
+        <div class="section-title">
+            <h2>Our Main Divisions ⚙️</h2>
+            <p>Exploring multiple areas of technology, gaming, engineering, and future mobility concepts.</p>
+        </div>
+
+        <div class="divisions-container">
+
+            <!-- 01. TSB Games -->
+            <div class="division-card">
+                <div>
+                    <div class="game-image">🎮</div>
+                    <h3>01. TSB <span>Games</span></h3>
+                    <p>Focuses on designing and developing interactive games for PC and other platforms with unique environments and creative designs.</p>
+                </div>
+                <span class="status">ACTIVE DEVELOPMENT</span>
+            </div>
+
+            <!-- 02. TSB Web & Digital -->
+            <div class="division-card">
+                <div>
+                    <div class="game-image">🌐</div>
+                    <h3>02. TSB <span>Web & Digital</span></h3>
+                    <p>Focuses on website development, digital platforms, user interfaces, UI/UX design, and interactive online experiences.</p>
+                </div>
+                <span class="status">ONLINE PLATFORMS</span>
+            </div>
+
+            <!-- 03. TSB Motors -->
+            <div class="division-card">
+                <div>
+                    <div class="game-image">🏎️</div>
+                    <h3>03. TSB <span>Motors</span></h3>
+                    <p>Represents our interest in automotive technology, vehicle design, performance engineering, and future mobility concepts.</p>
+                </div>
+                <span class="status">AUTOMOTIVE TECH</span>
+            </div>
+
+            <!-- 04. TSB Heavy Vehicles -->
+            <div class="division-card">
+                <div>
+                    <div class="game-image">🚛</div>
+                    <h3>04. TSB <span>Heavy Vehicles</span></h3>
+                    <p>Represents our future interest in heavy vehicle engineering, transportation technology, and industrial vehicle concepts.</p>
+                </div>
+                <span class="status">FUTURE ENGINEERING</span>
+            </div>
+
+            <!-- 05. TSB Robotics -->
+            <div class="division-card">
+                <div>
+                    <div class="game-image">🤖</div>
+                    <h3>05. TSB <span>Robotics</span></h3>
+                    <p>Focuses on exploring robotics, automation, intelligent machines, and practical engineering solutions.</p>
+                </div>
+                <span class="status">AUTOMATION & AI</span>
+            </div>
+
+            <!-- 06. TSB Energy -->
+            <div class="division-card">
+                <div>
+                    <div class="game-image">⚡</div>
+                    <h3>06. TSB <span>Energy</span></h3>
+                    <p>Represents our ambition to explore energy technology, efficient systems, and innovative clean energy solutions.</p>
+                </div>
+                <span class="status">CLEAN TECH</span>
+            </div>
+
+            <!-- 07. TSB Aerospace -->
+            <div class="division-card">
+                <div>
+                    <div class="game-image">🚀</div>
+                    <h3>07. TSB <span>Aerospace</span></h3>
+                    <p>Represents our long-term interest in aerospace engineering, aviation technology, and advanced engineering concepts.</p>
+                </div>
+                <span class="status">LONG-TERM VISION</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS (VELTORAX & MUDHAUL & STORMGUARD) -->
+
+    <section id="projects" style="background: #080811;">
+        <div class="section-title">
+            <h2>Featured Projects 🕹️</h2>
+            <p>Flagship games and applications currently crafted by The Super Boys Studio.</p>
         </div>
 
         <div class="games-container">
 
-            <!-- MUDHAUL -->
-
+            <!-- VELTORAX -->
             <div class="game-card">
-                <div class="game-image">🚛</div>
+                <div>
+                    <div class="game-image">🏎️</div>
+                    <h3>Veltorax: <span>The Art of Speed</span></h3>
+                    <p>A 3D Realistic Racing Game built using Godot Engine featuring a multi-level luxury garage, Porsche 911 GT3 RS, open world, and circuits.</p>
+                </div>
+                <div>
+                    <span class="status">GODOT • 3D RACING</span>
+                </div>
+            </div>
 
-                <h3>MudHaul: Sri Lanka</h3>
-
-                <p>
-                    A Sri Lankan off-road trucking adventure
-                    featuring challenging roads and muddy terrain.
-                </p>
-
-                <span class="status">DEVELOPING</span>
-
-                <a href="play.html" class="game-button">
-                    ▶ Play / Test
-                </a>
+            <!-- MUDHAUL -->
+            <div class="game-card">
+                <div>
+                    <div class="game-image">🚛</div>
+                    <h3>MudHaul: <span>Sri Lanka</span></h3>
+                    <p>A Sri Lankan off-road trucking adventure featuring challenging roads, muddy terrain, and realistic driving mechanics.</p>
+                </div>
+                <div>
+                    <span class="status">DEVELOPING</span>
+                    <a href="play.html" class="game-button">▶ Play / Test</a>
+                </div>
             </div>
 
             <!-- TSR1 SHADOW CITY -->
-
             <div class="game-card">
-                <div class="game-image">🌃</div>
-
-                <h3>TSR1: Shadow City</h3>
-
-                <p>
-                    An open-world action game set in a large city
-                    filled with roads, missions, vehicles, challenges,
-                    and hidden secrets.
-                </p>
-
-                <span class="status">DEVELOPING</span>
+                <div>
+                    <div class="game-image">🌃</div>
+                    <h3>TSR1: <span>Shadow City</span></h3>
+                    <p>An open-world action game set in a large city filled with roads, missions, vehicles, challenges, and hidden secrets.</p>
+                </div>
+                <div>
+                    <span class="status">DEVELOPING</span>
+                </div>
             </div>
 
+        </div>
+
+        <!-- STORMGUARD FEATURED APP -->
+        <div style="max-width: 1200px; margin: 40px auto 0;">
+            <div class="showcase-card" style="margin: 0 auto; max-width: 100%;">
+                <div class="showcase-header">
+                    <div class="showcase-icon" aria-hidden="true">🌦️</div>
+                    <h3>StormGuard</h3>
+                    <div class="card-subtitle">Windows Weather App</div>
+                </div>
+                <p>
+                    StormGuard is a Windows weather monitoring application designed to check current weather conditions, provide heavy-rain alerts, auto location detection, and offline data access.
+                </p>
+                <div style="text-align: center;">
+                    <a
+                        href="https://github.com/tajsasmith2015-cpu/The-Super-Boys-Studio/releases/latest"
+                        class="btn primary-btn"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        ⬇ Download StormGuard for Windows
+                    </a>
+                    <p class="download-note">
+                        Windows PC • Download from GitHub Releases • Version 1.0.0
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- PROJECTS & APPS (STORMGUARD & VELTORAX) -->
+    <!-- VISION, MISSION & VALUES -->
 
-    <section id="projects" class="showcase-section">
-        <div class="section-title">
-            <h2>Featured Projects & Apps 💻</h2>
-            <p>
-                Major applications and flagship racing games crafted by The Super Boys Studio.
-            </p>
-        </div>
+    <section class="vision-mission-section">
+        <div class="vm-container">
 
-        <!-- VELTORAX FEATURED PROJECT CARD -->
-
-        <div class="showcase-card">
-            <div class="showcase-header">
-                <div class="showcase-icon" aria-hidden="true">🏎️</div>
-                <h3>VELTORAX</h3>
-                <div class="card-subtitle">The Art of Speed</div>
-            </div>
-
-            <p>
-                A 3D Realistic Racing Game built using the Godot Engine. Veltorax combines Open World exploration, Professional Racing Circuits, and Street Racing with an immersive multi-level luxury garage experience.
-            </p>
-
-            <div class="feature-grid">
-                <div class="feature-box">
-                    <h4>🏢 Luxury Garage</h4>
-                    <p>Multi-level showroom with custom lighting, display platforms, and drive ramps connecting floors.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>🏎️ Porsche 911 GT3 RS</h4>
-                    <p>4.0L Flat-Six engine, 518 HP, 296 KM/H Top Speed, and rear-wheel drive setup.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>🌍 Game Worlds</h4>
-                    <p>Open World exploration, Professional Circuits with lap systems, and thrilling Street Racing tracks.</p>
-                </div>
-            </div>
-
-            <div style="text-align: center;">
-                <span class="status">ACTIVE DEVELOPMENT • GODOT ENGINE</span>
-            </div>
-        </div>
-
-        <!-- STORMGUARD CARD -->
-
-        <div class="showcase-card">
-            <div class="showcase-header">
-                <div class="showcase-icon" aria-hidden="true">🌦️</div>
-                <h3>StormGuard</h3>
-                <div class="card-subtitle">Windows Weather App</div>
-            </div>
-
-            <p>
-                StormGuard is a Windows weather monitoring application
-                designed to check current weather conditions and provide
-                heavy-rain alerts.
-            </p>
-
-            <ul class="feature-list">
-                <li>🌧️ Weather monitoring & Heavy-rain alerts</li>
-                <li>📍 Automatic approximate location detection</li>
-                <li>💾 Offline access to the last saved weather data</li>
-            </ul>
-
-            <div style="text-align: center;">
-                <a
-                    href="https://github.com/tajsasmith2015-cpu/The-Super-Boys-Studio/releases/latest"
-                    class="btn primary-btn"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    ⬇ Download StormGuard for Windows
-                </a>
-                <p class="download-note">
-                    Windows PC • Download from GitHub Releases • Version 1.0.0
+            <div class="vm-card">
+                <h3>Our Vision</h3>
+                <p>
+                    To grow The Super Boys Studio into a recognized technology and creative development organization that reaches an international audience while expanding into advanced engineering fields.
                 </p>
             </div>
-        </div>
 
+            <div class="vm-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To turn imagination into reality through continuous development, experimentation, teamwork, and innovation. Learning by building and improving through experience.
+                </p>
+            </div>
+
+            <div class="vm-card">
+                <h3>Our Values</h3>
+                <ul>
+                    <li><strong>Innovation:</strong> Exploring new ideas.</li>
+                    <li><strong>Creativity:</strong> Original concepts.</li>
+                    <li><strong>Engineering:</strong> Technical application.</li>
+                    <li><strong>Dedication:</strong> Consistent effort.</li>
+                    <li><strong>Teamwork:</strong> Collaborative ideas.</li>
+                    <li><strong>Quality:</strong> Professional standards.</li>
+                </ul>
+            </div>
+
+        </div>
     </section>
 
     <!-- PLAY / TEST -->
@@ -703,33 +878,8 @@
     <section id="play" class="play-section">
         <div class="play-box">
             <h2>Play / Test 🕹️</h2>
-
             <p>
-                Test our games directly through
-                The Super Boys Studio website.
-            </p>
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-
-    <section id="about" class="about">
-        <div class="section-title">
-            <h2>About The Super Boys Studio 👥</h2>
-        </div>
-
-        <div class="about-content">
-            <p>
-                The Super Boys Studio is a small game development
-                studio focused on creating fun, unique and exciting
-                gaming experiences.
-            </p>
-
-            <br>
-
-            <p>
-                We are learning, experimenting and building our
-                own games one project at a time.
+                Test our games directly through The Super Boys Studio website and explore our upcoming releases.
             </p>
         </div>
     </section>
@@ -737,13 +887,16 @@
     <!-- FOOTER -->
 
     <footer>
-        <p>
-            © 2026 <strong>The Super Boys Studio</strong>
+        <p style="font-size: 18px; margin-bottom: 10px;">
+            THE <strong>SUPER BOYS</strong> STUDIO
         </p>
-
-        <p>Games, apps and new ideas from Sri Lanka.</p>
-
-        <p>Built with 🎮 and ❤️</p>
+        <p style="color: #00d9ff; letter-spacing: 2px; margin-bottom: 15px;">
+            CREATIVITY. TECHNOLOGY. ENGINEERING. INNOVATION.
+        </p>
+        <p>
+            © 2026 <strong>The Super Boys Studio</strong> • Designed & Developed by TSB – Team Leader <strong>Taj Sasmith</strong>.
+        </p>
+        <p style="margin-top: 5px;">Building Ideas. Creating Experiences. Engineering the Future.</p>
     </footer>
 
 </body>
