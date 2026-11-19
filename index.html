@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="-fZlprMvD0L33PAVBLc0DVQ_n8Zn3CYaKXfJXxCmUS4" />
-    <title>The Super Boys Studio</title>
+
+    <title>The Super Boys Studio | Games, Apps & Velorax</title>
+
+    <meta name="description" content="Discover games and projects created by The Super Boys Studio, including MudHaul, StormGuard, and Velorax - The Art of Speed.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Super Boys Studio">
+    <meta name="theme-color" content="#050510">
+
+    <link rel="canonical" href="https://tajsasmith2015-cpu.github.io/The-Super-Boys-Studio/">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -17,292 +22,729 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 90px;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #0b0b12;
-            color: white;
+            background: #050510;
+            color: #e0e0e0;
+            overflow-x: hidden;
         }
 
+        /* NAVBAR */
+
         header {
-            background: #11111c;
-            padding: 20px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background: rgba(5, 5, 16, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            z-index: 1000;
         }
 
-        header h1 {
-            font-size: 25px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00d9ff;
         }
 
         nav {
             display: flex;
             gap: 25px;
+            align-items: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #00d9ff;
         }
 
+        /* HERO */
+
         .hero {
-            min-height: 650px;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #11112b, #17172d, #08080d);
+            padding: 120px 20px 60px;
+
+            background:
+                radial-gradient(circle at 20% 20%, rgba(0,217,255,0.15), transparent 35%),
+                radial-gradient(circle at 80% 70%, rgba(130,0,255,0.18), transparent 35%),
+                linear-gradient(135deg, #050510, #10102b, #050510);
+
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero h2 {
-            font-size: 55px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,217,255,0.15);
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-title {
+            color: #00d9ff;
+            font-size: 18px;
+            letter-spacing: 4px;
             margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            line-height: 1;
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px rgba(0,217,255,0.35);
+        }
+
+        .hero h1 span {
+            color: #00d9ff;
         }
 
         .hero p {
+            max-width: 700px;
             font-size: 20px;
-            color: #cccccc;
+            line-height: 1.6;
+            color: #c8c8d0;
             margin-bottom: 35px;
         }
 
-        button {
-            padding: 12px 24px;
-            margin-top: 18px;
-            border: none;
-            border-radius: 8px;
-            background: #00d9ff;
-            color: #050509;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-
-        section:not(.hero) {
-            min-height: 350px;
-            padding: 80px 50px;
-            text-align: center;
-        }
-
-        section:not(.hero) h2 {
-            font-size: 35px;
-            margin-bottom: 35px;
-        }
-
-        section:not(.hero) p {
-            color: #cccccc;
-            font-size: 18px;
-        }
-
-        .games-container {
+        .hero-buttons {
             display: flex;
+            gap: 15px;
             justify-content: center;
-            gap: 30px;
             flex-wrap: wrap;
-            max-width: 1000px;
-            margin: auto;
         }
 
-        .game-card {
-            width: 320px;
-            background: #151522;
-            border: 1px solid #292940;
-            border-radius: 15px;
-            padding: 20px;
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
             transition: 0.3s;
         }
 
-        .game-card:hover {
-            transform: translateY(-8px);
-            border-color: #00d9ff;
+        .primary-btn {
+            background: #00d9ff;
+            color: #050510;
+            box-shadow: 0 0 25px rgba(0,217,255,0.25);
         }
 
-        .game-image {
-            height: 170px;
-            border-radius: 10px;
-            background: #222238;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 75px;
-            margin-bottom: 20px;
+        .primary-btn:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 0 35px rgba(0,217,255,0.45);
         }
 
-        .game-card h3 {
-            font-size: 24px;
+        .secondary-btn {
+            border: 1px solid #00d9ff;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #00d9ff;
+            color: #050510;
+            transform: translateY(-4px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
             margin-bottom: 12px;
         }
 
+        .section-title p {
+            color: #9999a8;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* GAMES */
+
+        .games-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: linear-gradient(145deg, #121222, #0c0c18);
+            border: 1px solid #25253a;
+            border-radius: 18px;
+            padding: 20px;
+            transition: 0.35s;
+            overflow: hidden;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d9ff;
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.4),
+                0 0 25px rgba(0,217,255,0.12);
+        }
+
+        .game-image {
+            height: 190px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            margin-bottom: 20px;
+            background: radial-gradient(circle, #1d3150, #11111f);
+        }
+
+        .game-card h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
         .game-card p {
-            margin-bottom: 15px;
+            color: #aaaab5;
+            line-height: 1.6;
+            margin-bottom: 18px;
         }
 
         .status {
             display: inline-block;
             padding: 7px 14px;
             border-radius: 20px;
-            background: #00d9ff;
-            color: #050509;
+            background: rgba(0,217,255,0.12);
+            color: #00d9ff;
+            font-size: 13px;
             font-weight: bold;
-            font-size: 14px;
+            border: 1px solid rgba(0,217,255,0.25);
         }
+
+        .game-button {
+            display: block;
+            width: 100%;
+            margin-top: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 9px;
+            background: #00d9ff;
+            color: #050510;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .game-button:hover {
+            transform: scale(1.03);
+        }
+
+        /* PROJECT / APPS SHOWCASE */
+
+        .showcase-section {
+            text-align: center;
+            background:
+                radial-gradient(circle at center, rgba(0,217,255,0.08), transparent 60%),
+                #080811;
+        }
+
+        .showcase-card {
+            max-width: 850px;
+            margin: 0 auto 35px;
+            padding: 45px 30px;
+            border: 1px solid #25253a;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #121222, #0c0c18);
+            box-shadow: 0 0 30px rgba(0,217,255,0.06);
+            transition: 0.35s;
+            text-align: left;
+        }
+
+        .showcase-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .showcase-card:hover {
+            border-color: #00d9ff;
+            box-shadow: 0 0 35px rgba(0,217,255,0.14);
+        }
+
+        .showcase-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .showcase-icon {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .showcase-card h3 {
+            color: #00d9ff;
+            font-size: 30px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .card-subtitle {
+            color: #ffffff;
+            font-size: 16px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0.85;
+            text-align: center;
+        }
+
+        .showcase-card p {
+            max-width: 750px;
+            margin: 0 auto 20px;
+            color: #b5b5c0;
+            font-size: 17px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 0 auto 28px;
+            color: #dedee8;
+            line-height: 2;
+            max-width: 700px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .feature-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .feature-box h4 {
+            color: #00d9ff;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .feature-box p {
+            font-size: 14px;
+            color: #aaaab5;
+            margin: 0;
+            text-align: left;
+        }
+
+        .download-note {
+            margin-top: 18px;
+            color: #9999a8;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #080811;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .about-content p {
+            color: #b5b5c0;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* PLAY */
+
+        .play-section {
+            text-align: center;
+            background:
+                radial-gradient(circle at center, rgba(0,217,255,0.08), transparent 55%);
+        }
+
+        .play-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 50px 25px;
+            border: 1px solid #25253a;
+            border-radius: 20px;
+            background: #0d0d19;
+        }
+
+        .play-box h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .play-box p {
+            color: #aaaab5;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #11111c;
             text-align: center;
-            padding: 25px;
-            color: #aaaaaa;
+            padding: 30px;
+            background: #05050c;
+            border-top: 1px solid #1d1d2b;
+            color: #777783;
+            line-height: 1.8;
         }
 
+        footer strong {
+            color: #00d9ff;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+            header {
+                padding: 15px 18px;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .logo {
+                font-size: 17px;
+            }
+
+            nav {
+                gap: 13px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            section {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .showcase-card {
+                padding: 35px 20px;
+            }
+
+            .showcase-card h3 {
+                font-size: 26px;
+            }
+
+            .btn {
+                padding: 13px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .hero::before {
+                animation: none;
+            }
+
+            * {
+                transition: none !important;
+            }
+        }
     </style>
 </head>
 
-
 <body>
 
-<header>
+    <!-- NAVBAR -->
 
-    <h1>The Super Boys Studio</h1>
+    <header>
+        <div class="logo">
+            THE <span>SUPER BOYS</span> STUDIO
+        </div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#games">Games</a>
-        <a href="#play">Play / Test</a>
-        <a href="#about">About</a>
-    </nav>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#games">Games</a>
+            <a href="#projects">Projects</a>
+            <a href="#play">Play</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
 
-</header>
-
-
-<main>
+    <!-- HOME -->
 
     <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="small-title">
+                INDEPENDENT GAME STUDIO
+            </div>
 
-        <h2>Welcome to The Super Boys Studio 🎮</h2>
+            <h1>
+                THE <span>SUPER BOYS</span><br>
+                STUDIO
+            </h1>
 
-        <p>
-            We create games, experiment with ideas, and build new worlds.
-        </p>
+            <p>
+                We create games, explore new ideas,
+                and build worlds for players to discover.
+            </p>
 
-        <button onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">
-            Explore Our Games
-        </button>
+            <div class="hero-buttons">
+                <a href="#games" class="btn primary-btn">
+                    🎮 Explore Games
+                </a>
 
+                <a href="#projects" class="btn secondary-btn">
+                    🏎️ Velorax Project
+                </a>
+            </div>
+        </div>
     </section>
 
+    <!-- GAMES -->
 
     <section id="games">
-
-        <h2>Our Games 🎮</h2>
+        <div class="section-title">
+            <h2>Our Games 🎮</h2>
+            <p>
+                Games currently being developed by The Super Boys Studio.
+            </p>
+        </div>
 
         <div class="games-container">
 
+            <!-- MUDHAUL -->
 
             <div class="game-card">
+                <div class="game-image">🚛</div>
 
-                <div class="game-image">
-                    🚛
-                </div>
-
-                <h3>
-                    MudHaul: Sri Lanka
-                </h3>
+                <h3>MudHaul: Sri Lanka</h3>
 
                 <p>
-                    A Sri Lankan off-road trucking game.
+                    A Sri Lankan off-road trucking adventure
+                    featuring challenging roads and muddy terrain.
                 </p>
 
-                <span class="status">
-                    Developing
-                </span>
+                <span class="status">DEVELOPING</span>
 
-                <br>
-
-                <button onclick="alert('MudHaul: Sri Lanka is still developing! 🚛🎮')">
-                    Play / Test
-                </button>
-
+                <a href="play.html" class="game-button">
+                    ▶ Play / Test
+                </a>
             </div>
 
+            <!-- TSR1 SHADOW CITY -->
 
             <div class="game-card">
+                <div class="game-image">🌃</div>
 
-                <div class="game-image">
-                    🎮
-                </div>
-
-                <h3>
-                    Coming Soon
-                </h3>
+                <h3>TSR1: Shadow City</h3>
 
                 <p>
-                    Our next game will be announced here.
+                    An open-world action game set in a large city
+                    filled with roads, missions, vehicles, challenges,
+                    and hidden secrets.
                 </p>
 
-                <span class="status">
-                    Coming Soon
-                </span>
-
+                <span class="status">DEVELOPING</span>
             </div>
 
+        </div>
+    </section>
 
+    <!-- PROJECTS & APPS (STORMGUARD & VELTORAX) -->
+
+    <section id="projects" class="showcase-section">
+        <div class="section-title">
+            <h2>Featured Projects & Apps 💻</h2>
+            <p>
+                Major applications and flagship racing games crafted by The Super Boys Studio.
+            </p>
+        </div>
+
+        <!-- VELTORAX FEATURED PROJECT CARD -->
+
+        <div class="showcase-card">
+            <div class="showcase-header">
+                <div class="showcase-icon" aria-hidden="true">🏎️</div>
+                <h3>VELTORAX</h3>
+                <div class="card-subtitle">The Art of Speed</div>
+            </div>
+
+            <p>
+                A 3D Realistic Racing Game built using the Godot Engine. Veltorax combines Open World exploration, Professional Racing Circuits, and Street Racing with an immersive multi-level luxury garage experience.
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h4>🏢 Luxury Garage</h4>
+                    <p>Multi-level showroom with custom lighting, display platforms, and drive ramps connecting floors.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>🏎️ Porsche 911 GT3 RS</h4>
+                    <p>4.0L Flat-Six engine, 518 HP, 296 KM/H Top Speed, and rear-wheel drive setup.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>🌍 Game Worlds</h4>
+                    <p>Open World exploration, Professional Circuits with lap systems, and thrilling Street Racing tracks.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <span class="status">ACTIVE DEVELOPMENT • GODOT ENGINE</span>
+            </div>
+        </div>
+
+        <!-- STORMGUARD CARD -->
+
+        <div class="showcase-card">
+            <div class="showcase-header">
+                <div class="showcase-icon" aria-hidden="true">🌦️</div>
+                <h3>StormGuard</h3>
+                <div class="card-subtitle">Windows Weather App</div>
+            </div>
+
+            <p>
+                StormGuard is a Windows weather monitoring application
+                designed to check current weather conditions and provide
+                heavy-rain alerts.
+            </p>
+
+            <ul class="feature-list">
+                <li>🌧️ Weather monitoring & Heavy-rain alerts</li>
+                <li>📍 Automatic approximate location detection</li>
+                <li>💾 Offline access to the last saved weather data</li>
+            </ul>
+
+            <div style="text-align: center;">
+                <a
+                    href="https://github.com/tajsasmith2015-cpu/The-Super-Boys-Studio/releases/latest"
+                    class="btn primary-btn"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    ⬇ Download StormGuard for Windows
+                </a>
+                <p class="download-note">
+                    Windows PC • Download from GitHub Releases • Version 1.0.0
+                </p>
+            </div>
         </div>
 
     </section>
 
+    <!-- PLAY / TEST -->
 
-    <section id="play">
+    <section id="play" class="play-section">
+        <div class="play-box">
+            <h2>Play / Test 🕹️</h2>
 
-        <h2>
-            Play / Test 🕹️
-        </h2>
-
-        <p>
-            Test our games directly from the website.
-        </p>
-
+            <p>
+                Test our games directly through
+                The Super Boys Studio website.
+            </p>
+        </div>
     </section>
 
+    <!-- ABOUT -->
 
-    <section id="about">
+    <section id="about" class="about">
+        <div class="section-title">
+            <h2>About The Super Boys Studio 👥</h2>
+        </div>
 
-        <h2>
-            About The Super Boys Studio 👥
-        </h2>
+        <div class="about-content">
+            <p>
+                The Super Boys Studio is a small game development
+                studio focused on creating fun, unique and exciting
+                gaming experiences.
+            </p>
 
-        <p>
-            A small game studio creating fun and unique games.
-        </p>
+            <br>
 
+            <p>
+                We are learning, experimenting and building our
+                own games one project at a time.
+            </p>
+        </div>
     </section>
 
-</main>
+    <!-- FOOTER -->
 
+    <footer>
+        <p>
+            © 2026 <strong>The Super Boys Studio</strong>
+        </p>
 
-<footer>
+        <p>Games, apps and new ideas from Sri Lanka.</p>
 
-    <p>
-        © 2026 The Super Boys Studio
-    </p>
-
-</footer>
-
+        <p>Built with 🎮 and ❤️</p>
+    </footer>
 
 </body>
-
 </html>
